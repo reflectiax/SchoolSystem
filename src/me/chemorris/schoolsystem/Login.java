@@ -11,6 +11,7 @@ public class Login extends javax.swing.JFrame {
 
     static Connection connection;
     
+    // Sets up the GUI
     public Login() {
         initComponents();
         setTitle("Georgetown Primary School | Login");
@@ -121,13 +122,14 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_usernameFieldActionPerformed
 
+    // Allows the login button to connect to the database and log the user in
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
          
         String password = passwordField.getText();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");	   
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_management_system", "root", "root");
-            String sql = "Select * from login where username=? and password=?";
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoolsystem", "root", "root");
+            String sql = "Select * from teachers where username=? and password=?";
             PreparedStatement pst = connection.prepareStatement(sql);
             pst.setString(1, usernameField.getText());
             pst.setString(2, passwordField.getText());
@@ -138,7 +140,7 @@ public class Login extends javax.swing.JFrame {
                 home.setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Your username or password was incorrect.");
+                JOptionPane.showMessageDialog(null, "Your username or password is incorrect.");
             }
             connection.close();
         }

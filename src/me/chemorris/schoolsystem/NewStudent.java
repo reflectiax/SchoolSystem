@@ -21,7 +21,7 @@ public class NewStudent extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");	   
-            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_management_system", "root", "root");
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoolsystem", "root", "root");
         
             displaytable();
         }
@@ -48,8 +48,8 @@ public class NewStudent extends javax.swing.JFrame {
         emailField = new javax.swing.JTextField();
         addressLabel = new javax.swing.JLabel();
         addressField = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        studentTablePanel = new javax.swing.JPanel();
+        studentScrollPanel = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -152,7 +152,7 @@ public class NewStudent extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true)));
+        studentTablePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true)));
 
         studentTable.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -166,22 +166,22 @@ public class NewStudent extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(studentTable);
+        studentScrollPanel.setViewportView(studentTable);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout studentTablePanelLayout = new javax.swing.GroupLayout(studentTablePanel);
+        studentTablePanel.setLayout(studentTablePanelLayout);
+        studentTablePanelLayout.setHorizontalGroup(
+            studentTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentTablePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(studentScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        studentTablePanelLayout.setVerticalGroup(
+            studentTablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentTablePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addComponent(studentScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -193,7 +193,7 @@ public class NewStudent extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(newStudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(studentTablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
@@ -202,7 +202,7 @@ public class NewStudent extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(newStudentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(studentTablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -245,7 +245,7 @@ public class NewStudent extends javax.swing.JFrame {
                 PreparedStatement stmt = c.prepareStatement("insert into students values('"+SID+"','"+Name+"','"+Address+"','"+Year+"','"+PhoneNumber+"','"+Email+"') ");
                 stmt.execute();
                 displaytable();
-                JOptionPane.showMessageDialog(new JFrame(), "Student Added Successfully !", "Message" , JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "Student has been added successfully!", "Message" , JOptionPane.INFORMATION_MESSAGE);
                 
                 studentIDField.setText("");
                 nameField.setText("");
@@ -274,8 +274,6 @@ public class NewStudent extends javax.swing.JFrame {
     private javax.swing.JButton backButton;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JPanel newStudentPanel;
@@ -283,7 +281,9 @@ public class NewStudent extends javax.swing.JFrame {
     private javax.swing.JLabel phoneNumberLabel;
     private javax.swing.JTextField studentIDField;
     private javax.swing.JLabel studentIDLabel;
+    private javax.swing.JScrollPane studentScrollPanel;
     private javax.swing.JTable studentTable;
+    private javax.swing.JPanel studentTablePanel;
     private javax.swing.JComboBox<String> yearComboBox;
     private javax.swing.JLabel yearLabel;
     // End of variables declaration//GEN-END:variables
