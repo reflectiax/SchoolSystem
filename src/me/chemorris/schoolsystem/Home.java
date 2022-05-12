@@ -15,6 +15,7 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        // Declaration of variables
         headingLabel = new javax.swing.JLabel();
         newBookButton = new javax.swing.JButton();
         newStudentButton = new javax.swing.JButton();
@@ -28,9 +29,11 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        // setting the font, font size and text of the heading of the home page
         headingLabel.setFont(new java.awt.Font("Myanmar Text", 1, 30)); // NOI18N
         headingLabel.setText("Georgetown Primary School - DBMS");
 
+        // setting the font, font size and text of the 'New Book' button.
         newBookButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         newBookButton.setText("New Book");
         newBookButton.addActionListener(new java.awt.event.ActionListener() {
@@ -39,6 +42,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'New Student' button.
         newStudentButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         newStudentButton.setText("New Student");
         newStudentButton.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +51,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'Tables' button.
         tablesButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         tablesButton.setText("Tables");
         tablesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +60,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'Issue Book' button.
         issueBookButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         issueBookButton.setText("Issue Book");
         issueBookButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +69,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'Return Book' button.
         returnBookButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         returnBookButton.setText("Return Book");
         returnBookButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +78,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'Logout' button.
         logoutButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +87,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'New Meal' button.
         newMealButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         newMealButton.setText("New Meal");
         newMealButton.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +96,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'New Teacher' button.
         newTeacherButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         newTeacherButton.setText("New Teacher");
         newTeacherButton.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +105,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // setting the font, font size and text of the 'Issue Meal' button.
         issueMealButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         issueMealButton.setText("Issue Meal");
         issueMealButton.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +114,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        // Setting the layout of the GUI
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
